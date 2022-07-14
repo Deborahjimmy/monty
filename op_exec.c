@@ -6,6 +6,7 @@ void opcode_exec(stack_t **top, char *command, unsigned int line_number)
 	instruction_t opcodes[10];
 	char *mnemonics[] = {"push", "pall"};
 	void (*func[])(stack_t **, unsigned int) = {push, pall};
+	extern int data_num;
 
 	for (i = 0; i < 2; i++)
 	{
@@ -24,13 +25,4 @@ void opcode_exec(stack_t **top, char *command, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	opcodes[i].f(top, line_number);
-}
-
-void push(stack_t **top, unsigned int line_number)
-{
-	printf("From PUSH %d\n", line_number);
-}
-void pall(stack_t **top, unsigned int line_number)
-{
-	printf("From PALL %d\n", line_number);
 }

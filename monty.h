@@ -37,8 +37,8 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+extern int data_num;
+
 void opcode_exec(stack_t **top, char *command, unsigned int line_number);
-void push(stack_t **top, unsigned int line_number);
-void pall(stack_t **top, unsigned int line_number);
 
 #endif /* MONTY_H */
