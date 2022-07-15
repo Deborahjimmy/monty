@@ -11,7 +11,7 @@ int main(int argc, char **argv)
 
         if (argc != 2)
         {
-                fprintf(stderr, "USAGE: %s file\n", argv[0]);
+                fprintf(stderr, "USAGE: monty file\n");
                 exit(EXIT_FAILURE);
         }
 
@@ -43,5 +43,8 @@ int main(int argc, char **argv)
 		argument = args[1];
                 opcode_exec(&top, args[0], line_no);
         }
+	fclose(cmd_file);
+	free_stack(top);
+	free(line);
         return (0);
 }

@@ -8,12 +8,14 @@ void mod(stack_t **top, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n",
 			line_number);
+		free_stack(*top);
 		exit(EXIT_FAILURE);
 	}
 	top_val = (*top)->n;
 	if (top_val == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
+		free_stack(*top);
 		exit(EXIT_FAILURE);
 	}
 
@@ -28,6 +30,7 @@ void pchar(stack_t **top, unsigned int line_number)
 	if ((*top) == NULL)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
+		free_stack(*top);
 		exit(EXIT_FAILURE);
 	}
 	top_val = (*top)->n;
@@ -35,6 +38,7 @@ void pchar(stack_t **top, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n",
 			line_number);
+		free_stack(*top);
 		exit(EXIT_FAILURE);
 	}
 	putchar(top_val);

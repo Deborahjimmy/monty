@@ -26,6 +26,7 @@ void opcode_exec(stack_t **top, char *command, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n",
 			line_number, command);
+		free_stack(*top);
 		exit(EXIT_FAILURE);
 	}
 	opcodes[i].f(top, line_number);

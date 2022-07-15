@@ -14,7 +14,11 @@ stack_t *add_element(stack_t **head, const int n)
 
         new = malloc(sizeof(stack_t));
         if (new == NULL)
-                return (NULL);
+	{
+		fprintf(stderr, "Error: malloc failed");
+		free_stack(*head);
+                exit(EXIT_FAILURE);
+	}
 
 	new->n = n;
         new->prev = NULL;
@@ -121,7 +125,11 @@ stack_t *add_element_end(stack_t **head, const int n)
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
-		return (NULL);
+	{
+		fprintf(stderr, "Error: malloc failed");
+		free_stack(*head);
+		exit(EXIT_FAILURE);
+	}
 
 	new->n = n;
 	new->next = NULL;
@@ -142,4 +150,22 @@ stack_t *add_element_end(stack_t **head, const int n)
 	new->prev = h;
 
 	return (new);
+}
+
+/**
+ * free_stack - Frees the memory allocated to a doubly linked list.
+ * @head: Pointer to the HEAD of the list.
+ * Return: Void.
+ */
+void free_stack(stack_t *head)
+{
+	stack_t *current, *temp;
+
+	current = head;
+	while (current)
+	{
+		temp = current;
+		current = current->next;
+		free(temp);
+	}
 }

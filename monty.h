@@ -46,6 +46,7 @@ stack_t *add_element(stack_t **head, const int n);
 stack_t *add_element_end(stack_t **head, const int n);
 size_t p_stack_t(const stack_t *h);
 int delete_element(stack_t **head, unsigned int index);
+void free_stack(stack_t *head);
 void push(stack_t **top, unsigned int line_number);
 void pall(stack_t **top, unsigned int line_number);
 void pint(stack_t **top, unsigned int line_number);
