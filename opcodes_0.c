@@ -5,14 +5,26 @@ unsigned int mode;
 
 void push(stack_t **top, unsigned int line_number)
 {
+	int i;
+
 	if (argument == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free_stack(*top);
 		exit(EXIT_FAILURE);
 	}
+	for (i = 0; argument[i] != '\0'; i++)
+		if (argument[i] != '-' &&
+		    (argument[i] < '0' || argument[i] > '9'))
+		{
+			fprintf(stderr, "L%d: usage: push integer\n",
+				line_number);
+			free_stack(*top);
+			exit(EXIT_FAILURE);
+		}
 	data_num = atoi(argument);
-	if (data_num == 0 && (strcmp(argument, "0") != 0))
+	if (data_num == 0 && (strcmp(argument, "0") != 0)
+	    && (strcmp(argument, "-0")))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free_stack(*top);
