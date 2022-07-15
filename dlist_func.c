@@ -1,65 +1,61 @@
-#include "monty.h"                                  
-                                                    
-/**                                                 
- * add_element - adds a new node at the beginning  
- * of a stack_t                                     
- *                                                  
- * @head: head of the stack                         
- * @n: value of the element                         
- * Return: the address of the new element           
- */                                                
-stack_t *add_element(stack_t **head, const int n)  
-{                                                   
-        stack_t *new;                               
-        stack_t *h;                                 
-                                                    
-        new = malloc(sizeof(stack_t));              
-        if (new == NULL)                            
-                return (NULL);                      
-                                                    
-        new->n = n;                                 
-        new->prev = NULL;                           
-        h = *head;                                  
-                                                    
-        if (h != NULL)                              
-        {                                           
-                while (h->prev != NULL)             
-                        h = h->prev;                
-        }                                           
-                                                    
-        new->next = h;                              
-                                                    
+#include "monty.h"
+
+/**
+ * add_element - adds a new node at the beginning
+ * of a stack_t
+ * @head: head of the stack
+ * @n: value of the element
+ * Return: the address of the new element
+ */
+stack_t *add_element(stack_t **head, const int n)
+{
+        stack_t *new;
+        stack_t *h;
+
+        new = malloc(sizeof(stack_t));
+        if (new == NULL)
+                return (NULL);
+
+	new->n = n;
+        new->prev = NULL;
+        h = *head;
+
+	if (h != NULL)
+        {
+                while (h->prev != NULL)
+                        h = h->prev;
+        }
+
+        new->next = h;
+
         if (h != NULL)
-	  h->prev = new;
+		h->prev = new;
 
         *head = new;
 
         return (new);
 }
-                                                                               
-                                                            
-/**                                                         
- * p_stack_t - prints all the elements of a dlistint_t list 
- * @h: head of list                                         
- *                                                          
- * Return: the number of nodes                              
- */                                                         
-size_t p_stack_t(const stack_t *h)                          
-{                                                           
-        const stack_t *p;                                   
-        int i;                                              
-                                                            
-        i = 0;                                              
-        p = h;                                              
-        while (p != NULL)                                   
-        {                                                   
-                printf("%d\n", p->n);                       
-                i++;                                        
-                p = p->next;                                
-        }                                                   
-        return (i);                                         
-}
 
+/**
+ * p_stack_t - prints all the elements of a dlistint_t list
+ * @h: head of list
+ * Return: the number of nodes
+ */
+size_t p_stack_t(const stack_t *h)
+{
+        const stack_t *p;
+        int i;
+
+	i = 0;
+        p = h;
+        while (p != NULL)
+        {
+		printf("%d\n", p->n);
+		i++;
+		p = p->next;
+	}
+	return (i);
+}
 
 /**
  * delete_element - deletes the node at index of a

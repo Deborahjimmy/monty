@@ -8,7 +8,6 @@ int main(int argc, char **argv)
         size_t bufsize;
         ssize_t read;
         stack_t *top = NULL;
-	extern int data_num;
 
         if (argc != 2)
         {
@@ -23,6 +22,7 @@ int main(int argc, char **argv)
                 exit(EXIT_FAILURE);
         }
 
+	stack(NULL, 0);
         while ((read = getline(&line, &bufsize, cmd_file)) != -1)
         {
 		line_no++;
@@ -38,9 +38,9 @@ int main(int argc, char **argv)
                         else
                                 break;
                 }
-                if (args[0] == NULL)
+                if (args[0] == NULL || (*args[0]) == '#')
                         continue;
-		data_num = atoi(args[1]);
+		argument = args[1];
                 opcode_exec(&top, args[0], line_no);
         }
         return (0);

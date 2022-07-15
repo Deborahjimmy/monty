@@ -3,22 +3,26 @@
 void opcode_exec(stack_t **top, char *command, unsigned int line_number)
 {
 	int i;
-	instruction_t opcodes[10];
-	char *mnemonics[] = {"push", "pall"};
-	void (*func[])(stack_t **, unsigned int) = {push, pall};
-	extern int data_num;
+	instruction_t opcodes[17];
+	char *mnemonics[] = {"push", "pall", "pint", "pop", "swap", "add", "nop",
+			     "sub", "div", "mul", "mod", "pchar", "pstr",
+			     "rotl", "rotr", "stack", "queue"};
+	void (*func[])(stack_t **, unsigned int) = {push, pall, pint, pop, swap,
+						    add, nop, sub, divd, mul,
+						    mod, pchar, pstr, rotl,
+						    rotr, stack, queue};
 
-	for (i = 0; i < 2; i++)
+	for (i = 0; i < 17; i++)
 	{
 		opcodes[i].opcode = mnemonics[i];
 		opcodes[i].f = func[i];
 	}
-	for (i = 0; i < 10; i++)
+	for (i = 0; i < 17; i++)
 	{
 		if (strcmp(opcodes[i].opcode,command) == 0)
 			break;
 	}
-	if (i == 10)
+	if (i == 17)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n",
 			line_number, command);

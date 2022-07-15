@@ -37,8 +37,31 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+extern char *argument;
 extern int data_num;
+extern unsigned int mode;
 
 void opcode_exec(stack_t **top, char *command, unsigned int line_number);
+stack_t *add_element(stack_t **head, const int n);
+stack_t *add_element_end(stack_t **head, const int n);
+size_t p_stack_t(const stack_t *h);
+int delete_element(stack_t **head, unsigned int index);
+void push(stack_t **top, unsigned int line_number);
+void pall(stack_t **top, unsigned int line_number);
+void pint(stack_t **top, unsigned int line_number);
+void pop(stack_t **top, unsigned int line_number);
+void swap(stack_t **top, unsigned int line_number);
+void add(stack_t **top, unsigned int line_number);
+void nop(stack_t **top, unsigned int line_number);
+void sub(stack_t **top, unsigned int line_number);
+void divd(stack_t **top, unsigned int line_number);
+void mul(stack_t **top, unsigned int line_number);
+void mod(stack_t **top, unsigned int line_number);
+void pchar(stack_t **top, unsigned int line_number);
+void pstr(stack_t **top, unsigned int line_number);
+void rotl(stack_t **top, unsigned int line_number);
+void rotr(stack_t **top, unsigned int line_number);
+void stack(stack_t **top, unsigned int line_number);
+void queue(stack_t **top, unsigned int line_number);
 
 #endif /* MONTY_H */
