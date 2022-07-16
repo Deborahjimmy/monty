@@ -1,5 +1,12 @@
 #include "monty.h"
 
+/**
+ *mod -computes the rest of the division of the second top element of the stack
+ *@top: Pointer to pointer to the top of the stack.
+ *@line_number:Line number of the instruction.
+ *Return:Void.
+ */
+
 void mod(stack_t **top, unsigned int line_number)
 {
 	int top_val;
@@ -23,6 +30,13 @@ void mod(stack_t **top, unsigned int line_number)
 	(*top)->n %= top_val;
 }
 
+/**
+ *pchar - Print the first element as an ASCII character(or queue)
+ *@top: Pointer to pointer to the top of the stack.
+ *@line_number:Line number of the instruction.
+ *Return:Void.
+ */
+
 void pchar(stack_t **top, unsigned int line_number)
 {
 	int top_val;
@@ -45,6 +59,13 @@ void pchar(stack_t **top, unsigned int line_number)
 	putchar('\n');
 }
 
+/**
+ *pstr - Print the element of the stack as an ASCII(or queue)
+ *@top: Pointer to pointer to the top of the stack.
+ *@line_number:Line number of the instruction.
+ *Return:Void.
+ */
+
 void pstr(stack_t **top, unsigned int line_number __attribute__((unused)))
 {
 	int top_val;
@@ -64,6 +85,13 @@ void pstr(stack_t **top, unsigned int line_number __attribute__((unused)))
 	putchar('\n');
 }
 
+/**
+ *rotl - rotate the element to the stack to the top(or queue)
+ *@top: Pointer to pointer to the top of the stack.
+ *@line_number:Line number of the instruction.
+ *Return:Void.
+ */
+
 void rotl(stack_t **top, unsigned int line_number __attribute__((unused)))
 {
 	stack_t *head, *tail;
@@ -80,6 +108,13 @@ void rotl(stack_t **top, unsigned int line_number __attribute__((unused)))
 		head->next = NULL;
 	}
 }
+
+/**
+ *Rotr - rotates the stack to the bottom.
+ *@top: Pointer to pointer to the top of the stack.
+ *@line_number:Line number of the instruction.
+ *Return:Void.
+ */
 
 void rotr(stack_t **top, unsigned int line_number __attribute__((unused)))
 {
