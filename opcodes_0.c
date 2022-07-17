@@ -5,10 +5,10 @@ char *argument;
 unsigned int mode;
 
 /**
- *push - Pushes a number to the stack(or queue)
- *@top: Pointer to pointer to the top of the stack.
- *@line_number:Line number of the instruction.
- *Return:Void.
+ * push - Pushes a number to the stack(or queue)
+ * @top: Pointer to pointer to the top of the stack.
+ * @line_number:Line number of the instruction.
+ * Return:Void.
  */
 
 void push(stack_t **top, unsigned int line_number)
@@ -45,10 +45,10 @@ void push(stack_t **top, unsigned int line_number)
 }
 
 /**
- *Pall - prints all the values on the stack, starting from the top of the stack
- *@top: Pointer to pointer to the top of the stack.
- *@line_number:Line number of the instruction.
- *Return:Void.
+ * pall - prints all the values on the stack, starting from the top of the stack
+ * @top: Pointer to pointer to the top of the stack.
+ * @line_number:Line number of the instruction.
+ * Return:Void.
  */
 
 void pall(stack_t **top, unsigned int line_number __attribute__((unused)))
@@ -57,10 +57,10 @@ void pall(stack_t **top, unsigned int line_number __attribute__((unused)))
 }
 
 /**
- *Pint - prints the value at the top of the stack(or queue)
- *@top: Pointer to pointer to the top of the stack.
- *@line_number:Line number of the instruction.
- *Return:Void.
+ * pint - prints the value at the top of the stack(or queue)
+ * @top: Pointer to pointer to the top of the stack.
+ * @line_number:Line number of the instruction.
+ * Return:Void.
  */
 
 void pint(stack_t **top, unsigned int line_number)
@@ -80,10 +80,10 @@ void pint(stack_t **top, unsigned int line_number)
 }
 
 /**
- *pop - removes the top element of the stack(or queue)
- *@top: Pointer to pointer to the top of the stack.
- *@line_number:Line number of the instruction.
- *Return:Void.
+ * pop - removes the top element of the stack(or queue)
+ * @top: Pointer to pointer to the top of the stack.
+ * @line_number:Line number of the instruction.
+ * Return:Void.
  */
 
 void pop(stack_t **top, unsigned int line_number)
@@ -98,10 +98,10 @@ void pop(stack_t **top, unsigned int line_number)
 }
 
 /**
- *swap -swaps the top two elements of the stack(or queue)
- *@top: Pointer to pointer to the top of the stack.
- *@line_number:Line number of the instruction.
- *Return:Void.
+ * swap -swaps the top two elements of the stack(or queue)
+ * @top: Pointer to pointer to the top of the stack.
+ * @line_number:Line number of the instruction.
+ * Return:Void.
  */
 
 void swap(stack_t **top, unsigned int line_number)
