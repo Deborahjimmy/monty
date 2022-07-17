@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * opcode_exec - executes the opcode functions.
+ * @top: Pointer to pointer to top of the stack (or queue).
+ * @line_number: Line number of the command.
+ * Return: Void.
+*/
 void opcode_exec(stack_t **top, char *command, unsigned int line_number)
 {
 	int i;
