@@ -3,6 +3,7 @@
 /**
  * opcode_exec - executes the opcode functions.
  * @top: Pointer to pointer to top of the stack (or queue).
+ * @command: Opcode to be executed.
  * @line_number: Line number of the command.
  * Return: Void.
 */
@@ -25,7 +26,7 @@ void opcode_exec(stack_t **top, char *command, unsigned int line_number)
 	}
 	for (i = 0; i < 17; i++)
 	{
-		if (strcmp(opcodes[i].opcode,command) == 0)
+		if (strcmp(opcodes[i].opcode, command) == 0)
 			break;
 	}
 	if (i == 17)

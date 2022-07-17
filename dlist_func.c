@@ -9,35 +9,35 @@
  */
 stack_t *add_element(stack_t **head, const int n)
 {
-        stack_t *new;
-        stack_t *h;
+	stack_t *new;
+	stack_t *h;
 
-        new = malloc(sizeof(stack_t));
-        if (new == NULL)
+	new = malloc(sizeof(stack_t));
+	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed");
 		free_stack(*head);
-                exit(EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 
 	new->n = n;
-        new->prev = NULL;
-        h = *head;
+	new->prev = NULL;
+	h = *head;
 
 	if (h != NULL)
-        {
-                while (h->prev != NULL)
-                        h = h->prev;
-        }
+	{
+		while (h->prev != NULL)
+			h = h->prev;
+	}
 
-        new->next = h;
+	new->next = h;
 
-        if (h != NULL)
+	if (h != NULL)
 		h->prev = new;
 
-        *head = new;
+	*head = new;
 
-        return (new);
+	return (new);
 }
 
 /**
@@ -47,13 +47,13 @@ stack_t *add_element(stack_t **head, const int n)
  */
 size_t p_stack_t(const stack_t *h)
 {
-        const stack_t *p;
-        int i;
+	const stack_t *p;
+	int i;
 
 	i = 0;
-        p = h;
-        while (p != NULL)
-        {
+	p = h;
+	while (p != NULL)
+	{
 		printf("%d\n", p->n);
 		i++;
 		p = p->next;

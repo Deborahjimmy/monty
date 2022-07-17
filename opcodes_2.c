@@ -1,7 +1,9 @@
 #include "monty.h"
 
 /**
- * mod - computes the rest of the division of the second top element of the stack
+ * mod - computes the rest of the division of the
+ * second top element of the stack.
+ *
  * @top: Pointer to pointer to the top of the stack.
  * @line_number: Line number of the instruction.
  * Return: Void.

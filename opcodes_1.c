@@ -96,17 +96,17 @@ void divd(stack_t **top, unsigned int line_number)
 
 void mul(stack_t **top, unsigned int line_number)
 {
-        int top_val;
+	int top_val;
 
-        if ((*top) == NULL || (*top)->next == NULL)
-        {
-                fprintf(stderr, "L%d: can't mul, stack too short\n",
-                        line_number);
+	if ((*top) == NULL || (*top)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n",
+			line_number);
 		free_stack(*top);
-                exit(EXIT_FAILURE);
-        }
+		exit(EXIT_FAILURE);
+	}
 
 	top_val = (*top)->n;
-        delete_element(top, 0);
-        (*top)->n *= top_val;
+	delete_element(top, 0);
+	(*top)->n *= top_val;
 }

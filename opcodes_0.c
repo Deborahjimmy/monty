@@ -45,7 +45,9 @@ void push(stack_t **top, unsigned int line_number)
 }
 
 /**
- * pall - prints all the values on the stack, starting from the top of the stack
+ * pall - prints all the values on the stack,
+ * starting from the top of the stack
+ *
  * @top: Pointer to pointer to the top of the stack.
  * @line_number: Line number of the instruction.
  * Return: Void.
