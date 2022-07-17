@@ -1,10 +1,10 @@
 #include "monty.h"
 
 /**
- *Add - adds the top two elements of the stack(or queue)
- *@top: Pointer to pointer to the top of the stack.
- *@line_number:Line number of the instruction.
- *Return:Void.
+ * add - adds the top two elements of the stack(or queue)
+ * @top: Pointer to pointer to the top of the stack.
+ * @line_number:Line number of the instruction.
+ * Return:Void.
  */
 void add(stack_t **top, unsigned int line_number)
 {
@@ -23,10 +23,10 @@ void add(stack_t **top, unsigned int line_number)
 }
 
 /**
- *nop - doesn't do anything
- *@top: Pointer to pointer to the top of the stack.
- *@line_number:Line number of the instruction.
- *Return:Void.
+ * nop - doesn't do anything
+ * @top: Pointer to pointer to the top of the stack.
+ * @line_number:Line number of the instruction.
+ * Return:Void.
  */
 
 void nop(stack_t **top __attribute__((unused)),
@@ -35,10 +35,10 @@ void nop(stack_t **top __attribute__((unused)),
 }
 
 /**
- *Sub - subtracts the top element of the stack(or queue)
- *@top: Pointer to pointer to the top of the stack.
- *@line_number:Line number of the instruction.
- *Return:Void.
+ * sub - subtracts the top element of the stack(or queue)
+ * @top: Pointer to pointer to the top of the stack.
+ * @line_number:Line number of the instruction.
+ * Return:Void.
  */
 
 void sub(stack_t **top, unsigned int line_number)
@@ -58,10 +58,10 @@ void sub(stack_t **top, unsigned int line_number)
 }
 
 /**
- *Div - Divides the second top element of the stack(or queue)
- *@top: Pointer to pointer to the top of the stack.
- *@line_number:Line number of the instruction.
- *Return:Void.
+ * divd - Divides the second top element of the stack(or queue)
+ * @top: Pointer to pointer to the top of the stack.
+ * @line_number:Line number of the instruction.
+ * Return:Void.
  */
 
 
@@ -88,10 +88,10 @@ void divd(stack_t **top, unsigned int line_number)
 }
 
 /**
- *mul - multiplies the second top element of the stack(or queue)
- *@top: Pointer to pointer to the top of the stack.
- *@line_number:Line number of the instruction.
- *Return:Void.
+ * mul - multiplies the second top element of the stack(or queue)
+ * @top: Pointer to pointer to the top of the stack.
+ * @line_number:Line number of the instruction.
+ * Return:Void.
  */
 
 void mul(stack_t **top, unsigned int line_number)
