@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * main - Entry point of the program.
+ * @argc: Number of arguments to the program.
+ * @argv: Pointer to string arguments.
+ * Return: Always 0.
+*/
 int main(int argc, char **argv)
 {
         FILE *cmd_file;
